@@ -35,3 +35,5 @@ Vercel gives you a URL like `ugc-toolkit.vercel.app`. You can also add a custom 
 ## Custom Domain (optional)
 1. In Vercel → Settings → Domains → Add your domain
 2. Follow the DNS instructions (usually just adding a CNAME record in your domain settings)
+
+3. 
