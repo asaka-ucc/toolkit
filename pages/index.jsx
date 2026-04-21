@@ -1,3 +1,29 @@
+const [unlocked, setUnlocked] = React.useState(false);
+const [passwordInput, setPasswordInput] = React.useState('');
+const CORRECT_PASSWORD = 'ugcclub2024'; // change this to whatever you want
+
+if (!unlocked) {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', fontFamily: 'sans-serif' }}>
+      <h2>UGC Creators Club — Members Only</h2>
+      <p>Enter your member password to access the toolkit.</p>
+      <input
+        type="password"
+        placeholder="Enter password"
+        value={passwordInput}
+        onChange={e => setPasswordInput(e.target.value)}
+        onKeyDown={e => { if (e.key === 'Enter' && passwordInput === CORRECT_PASSWORD) setUnlocked(true); }}
+        style={{ padding: '10px', fontSize: '16px', marginBottom: '10px', width: '250px', borderRadius: '6px', border: '1px solid #ccc' }}
+      />
+      <button
+        onClick={() => { if (passwordInput === CORRECT_PASSWORD) setUnlocked(true); else alert('Wrong password'); }}
+        style={{ padding: '10px 24px', fontSize: '16px', background: '#000', color: '#fff', border: 'none', borderRadius: '6px', cursor: 'pointer' }}
+      >
+        Enter
+      </button>
+    </div>
+  );
+}
 import { useState } from "react";
 
 const TOOLS = [
